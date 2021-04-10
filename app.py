@@ -1,14 +1,17 @@
-from flask import Flask, render_template, request
 import mysql.connector
+from flask import Flask, request, render_template, url_for
+from flask_bootstrap import Bootstrap
 
-app = Flask(__name__)
 
 mydatabase = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="12345",
-    database="djangodb"
+    password="",
+    database="sleep_disorders"
 )
+
+app = Flask(__name__)
+Bootstrap(app)
 
 @app.route('/', methods=["GET", "POST"])
 def hello_world():
@@ -25,17 +28,19 @@ def hello_world():
 
         return "DZIEKUJE"
 
-
     mycursor.execute("SELECT * FROM question")
-
     questions = mycursor.fetchall()
-
     mycursor.execute("SELECT * FROM answer")
-
     answer = mycursor.fetchall()
 
-    return render_template("form.html", questions=questions, answers=answer)
+    return render_template("index.html", questions=questions, answers=answer)
 
 
-if __name__ == '__main__':
+@app.route('/about', methods=["GET"])
+def about_page():
+    return "<h1>Gracias mi amigo</h1>"
+
+
+if __name__ == '__main__':   
     app.run()
+    hello_world()

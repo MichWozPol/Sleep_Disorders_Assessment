@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+       Home
+{% endblock title %}
+
+{% block content %}        
+    <form method="post" action="./">
+            {% for question in questions %}
+                <br>{{ question[1] }}<br>
+                {% for answer in answers %}
+                    {% if answer[1] == question[0] %}
+                        <div class="form-check">
+                        <input class="form-check-input" name="{{question[0]}}" value="{{ answer[0] }}" required type="radio">
+                        <label class="form-check-label">{{ answer[2] }}</label><br>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+            <button class="btn btn-primary" type="submit">SUBMIT</button>
+        </form>
+{% endblock content %}
+
+
+
+<!--justify content, add kind of container for questions-->
+<!--return '''<!doctype html><html>'-->
