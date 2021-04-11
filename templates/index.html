@@ -2,24 +2,33 @@
 
 
 {% block title %}
-       Home
+       Home     
 {% endblock title %}
 
-{% block content %}        
-    <form method="post" action="./">
-            {% for question in questions %}
-                <br>{{ question[1] }}<br>
-                {% for answer in answers %}
-                    {% if answer[1] == question[0] %}
-                        <div class="form-check">
-                        <input class="form-check-input" name="{{question[0]}}" value="{{ answer[0] }}" required type="radio">
-                        <label class="form-check-label">{{ answer[2] }}</label><br>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-            <button class="btn btn-primary" type="submit">SUBMIT</button>
-        </form>
+{% block css %}
+    <link href="{{url_for('static', filename='main.css')}}" rel="stylesheet", type="text/css">
+{% endblock css %}
+
+
+{% block content %}
+    <div class="d-flex justify-content-center"}>
+        <div class="row w-50 d-inline-block">        
+            <form method="post" action="./" class="form group bg-light text-black">
+                    {% for question in questions %}
+                        <br><br><div class="question-container px-4 py-2">{{ question[1] }}</div><br>
+                        {% for answer in answers %}
+                            {% if answer[1] == question[0] %}
+                                <div class="form-check">
+                                <input class="form" name="{{question[0]}}" value="{{ answer[0] }}" required type="radio">
+                                <label class="form-check-label">{{ answer[2] }}</label><br><br>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    <button class="btn btn-primary" type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
 {% endblock content %}
 
 
