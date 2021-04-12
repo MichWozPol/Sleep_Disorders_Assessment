@@ -9,8 +9,27 @@
     <link href="{{url_for('static', filename='main.css')}}" rel="stylesheet", type="text/css">
 {% endblock css %}
 
-
 {% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="d-flex justify-content-center bg-light"
+            style = "
+            background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80'); 
+            background-attachment: fixed;
+            background-position: center;"> 
+                <div class="row w-50 pt-5 pb-1 d-inline-block"> 
+                    <div class="alert alert-{{category}}">
+                        <p class="fw-bold fs-5">{{message}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %} 
+
+
     <div class="d-flex justify-content-center bg-light"
     style = "
     background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80'); 

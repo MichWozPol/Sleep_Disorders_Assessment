@@ -1,5 +1,5 @@
 import mysql.connector
-from flask import Flask, request, render_template, url_for
+from flask import Flask, request, render_template, url_for, flash, redirect
 from flask_bootstrap import Bootstrap
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -13,6 +13,7 @@ mydatabase = mysql.connector.connect(
 )
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '5c357453c419ecbb80cd6603f35967f4'
 Bootstrap(app)
 
 @app.route('/', methods=["GET", "POST"])
@@ -29,10 +30,10 @@ def hello_world():
             sql = "INSERT INTO vote (question_id, answer_id, user_id) VALUES (%s, %s, %s)"
             val = (int(key), int(value), 1)
             mycursor.execute(sql, val)
-
             mydatabase.commit()
 
-        return "DZIEKUJE"
+        flash(f'Formularz został wysłany. Dziękujemy za udział w ankiecie.', 'success')
+        return redirect(url_for('hello_world'))
 
     return render_template("index.html", questions=questions, answers=answer)
 
