@@ -9,25 +9,30 @@
 
 *,
 *:before,
-*:after {
+*:after 
+{
   box-sizing: border-box;
 }
 
-a {
+a 
+{
   text-decoration: none;
   color: #222;
 }
 
-html {
+html
+{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body 
+{
   font-family: "Roboto", sans-serif;
 }
 
-.sr-only {
+.sr-only 
+{
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0;
@@ -37,7 +42,8 @@ body {
   overflow: hidden;
 }
 
-.button {
+.button 
+{
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -49,7 +55,8 @@ body {
   text-align: center;
 }
 
-.button svg {
+.button svg 
+{
   display: inline-block;
   vertical-align: middle;
   width: 24px;
@@ -57,17 +64,21 @@ body {
   fill: #fff;
 }
 
-.button span {
+.button span 
+{
   display: none;
 }
 
-@media (min-width: 600px) {
-  .button span {
+@media (min-width: 600px) 
+{
+  .button span 
+  {
     display: initial;
   }
 }
 
-.button--icon {
+.button--icon 
+{
   min-width: initial;
   padding: 0.5rem;
 }
