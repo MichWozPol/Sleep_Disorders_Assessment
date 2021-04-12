@@ -20,13 +20,23 @@
             <form method="post" action="./" class="form group bg-light text-black rounded-lg border border-3 border-secondary">
                     {% for question in questions %}
                         <br><br><div class="question-container px-4 py-2">
-                        <p class="fw-bold fs-5">{{ loop.index }}. {{ question[1] }} {{i}}</p></div><br>
+                        <p class="fw-bold fs-5">{{ loop.index }}. {{ question[1] }} </p></div><br>
                         {% for answer in answers %}
-                            {% if answer[1] == question[0] %}
-                                <div class="form-check">
-                                <input class="form" name="{{question[0]}}" value="{{ answer[0] }}" required type="radio">
-                                <label class="form-check-label">{{ answer[2] }}</label><br><br>
-                                </div>
+                            {% if question[2] == "choose" %}
+                                {% if answer[1] == question[0] %}
+                                    <div class="form-check">
+                                        <input class="form" name="{{question[0]}}" value="{{ answer[0] }}" type="radio" required>
+                                        <label class="form-check-label">{{ answer[2] }}</label><br><br>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            {% if question[2] == "check" %}
+                               {% if answer[1] == question[0] %}
+                                    <div class="form-check">
+                                        <input class="form" name="{{question[0]}}" value="{{ answer[0] }}" type="checkbox" required>
+                                        <label class="form-check-label">{{ answer[2] }}</label><br><br>
+                                    </div>
+                                {% endif %}
                             {% endif %}
                         {% endfor %}
                     {% endfor %} </br>
