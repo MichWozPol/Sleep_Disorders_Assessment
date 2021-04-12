@@ -54,6 +54,9 @@ pip-delete-this-directory.txt
 # requirements
 requirements.txt
 
+#envs
+.sda_flask/
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
