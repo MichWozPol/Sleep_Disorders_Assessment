@@ -18,6 +18,10 @@ Bootstrap(app)
 @app.route('/', methods=["GET", "POST"])
 def hello_world():
     mycursor = mydatabase.cursor()
+    mycursor.execute("SELECT * FROM question")
+    questions = mycursor.fetchall()
+    mycursor.execute("SELECT * FROM answer")
+    answer = mycursor.fetchall()
 
     if request.method == "POST":
         print(request.form)
@@ -30,17 +34,16 @@ def hello_world():
 
         return "DZIEKUJE"
 
-    mycursor.execute("SELECT * FROM question")
-    questions = mycursor.fetchall()
-    mycursor.execute("SELECT * FROM answer")
-    answer = mycursor.fetchall()
-
     return render_template("index.html", questions=questions, answers=answer)
 
 
-@app.route('/about', methods=["GET"])
+@app.route('/o-projekcie', methods=["GET"])
 def about_page():
-    return "<h1>Gracias mi amigo</h1>"
+    return "<h1>About our project</h1>"
+
+@app.route('/badania', methods=["GET"])
+def research():
+    return "<h1>Research page</h1>"
 
 
 if __name__ == '__main__':   
