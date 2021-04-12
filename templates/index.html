@@ -11,14 +11,16 @@
 
 
 {% block content %}
-    <div class="d-flex justify-content-center bg-light"} 
-    style="background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80'); 
-    background-attachment: fixed;">
+    <div class="d-flex justify-content-center bg-light"
+    style = "
+    background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80'); 
+    background-attachment: fixed;
+    background-position: center;"> 
         <div class="row w-50 pt-4 pb-4 d-inline-block">        
             <form method="post" action="./" class="form group bg-light text-black rounded-lg border border-3 border-secondary">
                     {% for question in questions %}
                         <br><br><div class="question-container px-4 py-2">
-                        <p class="fw-bold fs-5">{{ question[1] }}</p></div><br>
+                        <p class="fw-bold fs-5">{{ loop.index }}. {{ question[1] }} {{i}}</p></div><br>
                         {% for answer in answers %}
                             {% if answer[1] == question[0] %}
                                 <div class="form-check">
@@ -27,14 +29,9 @@
                                 </div>
                             {% endif %}
                         {% endfor %}
-                    {% endfor %}
-                    <button class="btn btn-primary" type="submit">SUBMIT</button>
+                    {% endfor %} </br>
+                    <button class="btn btn-primary mx-3 mt-2 mb-3" type="submit">WYŚLIJ</button>
                 </form>
             </div>
         </div>
 {% endblock content %}
-
-
-
-<!--justify content, add kind of container for questions-->
-<!--return '''<!doctype html><html>'-->
