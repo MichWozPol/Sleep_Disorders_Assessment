@@ -29,9 +29,9 @@
           <div class="site-header__middle">
             <nav class="nav">
               <ul class="nav__wrapper">
-                <li class="nav__item"><a href="./">Home</a></li>
-                <li class="nav__item"><a href="./o-projekcie">O projekcie</a></li>
-                <li class="nav__item"><a href="./badania">Badania</a></li>
+                <li class="nav__item"><a href="{{ url_for('home')}}">Home</a></li>
+                <li class="nav__item"><a href="{{ url_for('about')}}">O projekcie</a></li>
+                <li class="nav__item"><a href="{{ url_for('research')}}">Badania</a></li>
               </ul>
             </nav>
           </div>

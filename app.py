@@ -17,7 +17,7 @@ app.config['SECRET_KEY'] = '5c357453c419ecbb80cd6603f35967f4'
 Bootstrap(app)
 
 @app.route('/', methods=["GET", "POST"])
-def hello_world():
+def home():
     mycursor = mydatabase.cursor()
     mycursor.execute("SELECT * FROM question")
     questions = mycursor.fetchall()
@@ -39,7 +39,7 @@ def hello_world():
 
 
 @app.route('/o-projekcie', methods=["GET"])
-def about_page():
+def about():
     return "<h1>About our project</h1>"
 
 @app.route('/badania', methods=["GET"])
@@ -49,4 +49,4 @@ def research():
 
 if __name__ == '__main__':   
     app.run()
-    hello_world()
+    home()
