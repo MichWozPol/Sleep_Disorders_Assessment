@@ -2,24 +2,21 @@ import datetime
 import mysql.connector
 from flask import Flask, request, render_template, url_for, flash, redirect
 from flask_bootstrap import Bootstrap
-from flask_migrate import Migrate
-from flask_sqlalchemy import SQLAlchemy
 
 
 mydatabase = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="12345",
-    database="djangodb"
+    password="",
+    database="sleep_disorders"
 )
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5c357453c419ecbb80cd6603f35967f4'
 Bootstrap(app)
 
-
 @app.route('/', methods=["GET", "POST"])
-def hello_world():
+def home():
     mycursor = mydatabase.cursor()
     mycursor.execute("SELECT * FROM question")
     questions = mycursor.fetchall()
@@ -53,9 +50,8 @@ def hello_world():
 
 
 @app.route('/o-projekcie', methods=["GET"])
-def about_page():
+def about():
     return "<h1>About our project</h1>"
-
 
 @app.route('/badania', methods=["GET"])
 def research():
@@ -64,4 +60,4 @@ def research():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    hello_world()
+    home()
