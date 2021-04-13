@@ -1,3 +1,4 @@
+import datetime
 import mysql.connector
 from flask import Flask, request, render_template, url_for, flash, redirect
 from flask_bootstrap import Bootstrap
@@ -24,9 +25,21 @@ def home():
 
     if request.method == "POST":
         print(request.form)
+        ip_address = request.remote_addr
+        date = datetime.datetime.now()
+        value = (date, ip_address)
+        print(f"data {date} ip: {ip_address}")
+        req = "INSERT INTO user (created_at, ip) VALUES (%s, %s)"
+        mycursor.execute(req, value)
+        mydatabase.commit()
+        sql = f"SELECT id FROM user WHERE ip = '{ip_address}' "
+        mycursor.execute(sql)
+        user_id = mycursor.fetchall()
+        print(int(user_id[-1][0]))
+
         for key, value in request.form.items():
             sql = "INSERT INTO vote (question_id, answer_id, user_id) VALUES (%s, %s, %s)"
-            val = (int(key), int(value), 1)
+            val = (int(key), int(value), int(user_id[-1][0]))
             mycursor.execute(sql, val)
             mydatabase.commit()
 
@@ -45,6 +58,6 @@ def research():
     return "<h1>Research page</h1>"
 
 
-if __name__ == '__main__':   
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
     home()
