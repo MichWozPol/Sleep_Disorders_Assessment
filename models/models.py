@@ -2,7 +2,10 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 from app import mydatabase as db
+#from app import db
 
+
+##TO BE CORRECTED
 
 class Answer(db.Model):
     question = db.ForeignKey('Question', db.DO_NOTHING)

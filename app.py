@@ -1,8 +1,6 @@
 import mysql.connector
 from flask import Flask, request, render_template, url_for, flash, redirect
 from flask_bootstrap import Bootstrap
-from flask_migrate import Migrate
-from flask_sqlalchemy import SQLAlchemy
 
 
 mydatabase = mysql.connector.connect(
