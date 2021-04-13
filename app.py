@@ -31,7 +31,7 @@ def home():
             mydatabase.commit()
 
         flash(f'Formularz został wysłany. Dziękujemy za udział w ankiecie.', 'success')
-        return redirect(url_for('hello_world'))
+        return redirect(url_for('home'))
 
     return render_template("index.html", questions=questions, answers=answer)
 
