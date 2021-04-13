@@ -51,7 +51,7 @@ def home():
 
 @app.route('/o-projekcie', methods=["GET"])
 def about():
-    return "<h1>About our project</h1>"
+    return render_template("about.html")
 
 @app.route('/badania', methods=["GET"])
 def research():
