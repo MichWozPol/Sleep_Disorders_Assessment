@@ -1,7 +1,7 @@
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
-from app import mydatabase as db
+from sleep_disorders import mydatabase as db
 #from app import db
 
 
