@@ -3,7 +3,6 @@ from sleep_disorders.__init__ import mydatabase
 from flask import request, flash, redirect, render_template, url_for
 from sleep_disorders import app
 
-
 @app.route('/', methods=["GET", "POST"])
 def home():
     mycursor = mydatabase.cursor()
@@ -13,6 +12,7 @@ def home():
     answer = mycursor.fetchall()
     mycursor.execute("SELECT ip FROM user")
     ip = mycursor.fetchall()
+
 
     if request.method == "POST":
 
@@ -40,7 +40,7 @@ def home():
             flash('Formularz został wysłany. Dziękujemy za udział w ankiecie.', 'success')
             return redirect(url_for('home'))
         else:
-            flash('Formularz został już wypełniony.', 'danger')
+            flash('Formularz został już wypełniony', 'danger')
             return redirect(url_for('home'))
 
     return render_template("index.html", questions=questions, answers=answer)
@@ -49,7 +49,6 @@ def home():
 @app.route('/o-projekcie', methods=["GET"])
 def about():
     return render_template("about.html")
-
 
 @app.route('/badania', methods=["GET"])
 def research():
