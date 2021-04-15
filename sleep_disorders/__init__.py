@@ -1,7 +1,9 @@
 import mysql.connector
-from flask import Flask
-from sleep_disorders.settings import settings
+from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
+from sleep_disorders.settings.configuration import Config
+from sleep_disorders.settings import db_settings as settings
+from sleep_disorders.errors.handlers import errors
 
 
 mydatabase = mysql.connector.connect(
@@ -11,16 +13,10 @@ mydatabase = mysql.connector.connect(
     database=settings.database
 )
 
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = settings.secret_key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:@localhost/sleep_disorders'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+app.config.from_object(Config)
+app.register_blueprint(errors)
 db = SQLAlchemy(app)
 db.Model.metadata.reflect(db.engine)
-app.config['SECRET_KEY'] = settings.secret_key
-
 
 from sleep_disorders import routes
-

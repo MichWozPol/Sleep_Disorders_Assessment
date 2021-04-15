@@ -1,5 +1,5 @@
 import datetime
-from sleep_disorders.__init__ import mydatabase
+from sleep_disorders import mydatabase
 from flask import request, flash, redirect, render_template, url_for
 from sleep_disorders import app
 from sleep_disorders import db
@@ -8,9 +8,7 @@ from sleep_disorders.models.models import Answer
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    print(Answer.query.filter(Answer.id == 2).all())
-
-
+    #print(Answer.query.filter_by(id=2).count())
 
     mycursor = mydatabase.cursor()
     mycursor.execute("SELECT * FROM question")
@@ -21,7 +19,6 @@ def home():
     ip = mycursor.fetchall()
 
     if request.method == "POST":
-
         print(request.form)
         ip_address = request.remote_addr
 
@@ -42,7 +39,8 @@ def home():
                 val = (int(key), int(value), int(user_id[-1][0]))
                 mycursor.execute(sql, val)
                 mydatabase.commit()
-
+            
+            mydatabase.close()
             flash('Formularz został wysłany. Dziękujemy za udział w ankiecie.', 'success')
             return redirect(url_for('home'))
         else:
