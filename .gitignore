@@ -58,8 +58,9 @@ requirements.txt
 .sda_flask/
 
 #other_project_resources
+project_resources/
 .project_resources/
-.project_resources.*
+.project_resources./*
 .project_resources
 
 # Unit test / coverage reports
