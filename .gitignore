@@ -59,6 +59,8 @@ requirements.txt
 
 #other_project_resources
 .project_resources/
+.project_resources.*
+.project_resources
 
 # Unit test / coverage reports
 htmlcov/
