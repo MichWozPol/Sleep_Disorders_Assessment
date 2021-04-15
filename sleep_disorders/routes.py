@@ -2,9 +2,16 @@ import datetime
 from sleep_disorders.__init__ import mydatabase
 from flask import request, flash, redirect, render_template, url_for
 from sleep_disorders import app
+from sleep_disorders import db
+from sleep_disorders.models.models import Answer
+
 
 @app.route('/', methods=["GET", "POST"])
 def home():
+    print(Answer.query.filter(Answer.id == 2).all())
+
+
+
     mycursor = mydatabase.cursor()
     mycursor.execute("SELECT * FROM question")
     questions = mycursor.fetchall()
@@ -12,7 +19,6 @@ def home():
     answer = mycursor.fetchall()
     mycursor.execute("SELECT ip FROM user")
     ip = mycursor.fetchall()
-
 
     if request.method == "POST":
 
@@ -49,7 +55,3 @@ def home():
 @app.route('/o-projekcie', methods=["GET"])
 def about():
     return render_template("about.html")
-
-@app.route('/badania', methods=["GET"])
-def research():
-    return "<h1>Research page</h1>"
