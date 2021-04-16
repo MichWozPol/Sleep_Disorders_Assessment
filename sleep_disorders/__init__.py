@@ -13,6 +13,7 @@ mydatabase = mysql.connector.connect(
     database=settings.database
 )
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
 app.register_blueprint(errors)
