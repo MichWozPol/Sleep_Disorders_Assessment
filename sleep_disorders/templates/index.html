@@ -5,8 +5,13 @@
        Ocena Snu
 {% endblock title %}
 
-{% block css %}
-{% endblock css %}
+{% block sub_home %}
+    <a class="nav-link active" aria-current="page" href="{{ url_for('home')}}">Home</a>
+{% endblock sub_home %}
+
+{% block sub_about %}
+    <a class="nav-link" href="{{ url_for('about')}}">O projekcie</a>
+{% endblock sub_about %}      
 
 {% block content %}
     <div class="d-flex justify-content-center bg-light"
@@ -57,7 +62,7 @@
                     </div>
                     </div>
                 {% endfor %}
-                <button class="btn btn-dark mx-3 mb-5" style="border-radius: 8px;" type="submit">WYŚLIJ</button>
+                <button class="btn btn-dark mx-3 mb-5" style="border-radius: 8px; margin-top:-8px;" type="submit">WYŚLIJ</button>
             </form>
         </div>
     </div>

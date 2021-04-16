@@ -5,16 +5,29 @@
        Error 404
 {% endblock title %}
 
+{% block sub_home %}
+    <a class="nav-link" href="{{ url_for('home')}}">Home</a>
+{% endblock sub_home %}
+
+{% block sub_about %}
+    <a class="nav-link" href="{{ url_for('about')}}">O projekcie</a>
+{% endblock sub_about %}   
+
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="d-flex justify-content-center"> 
-                <div class="row w-50 pt-5 pb-4 d-inline-block">
-                    <div class="form group bg-light text-black rounded-lg border border-3 border-secondary">
-                        <p class="h3 fw-bold pt-3 pb-2 text-danger text-center">Nie odnaleziono strony (Error 404).</p> 
+  <div class="d-flex justify-content-center bg-light"
+    style = "
+    background-image: url('static/images/background_night.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;">
+        <div class="row w-50 pt-4 pb-3 d-inline-block">
+            <div class = "row w-95 mx-auto">
+                <div class="text-holder-container rounded-lg border border-3 mb-4 px-4" style="border-radius: 30px; background-color: #eee5ee; border-color:#855787 !important; opacity: 0.88; filter: brightness(100%);">
+                    <div class="pt-3 px-2">
+                        <p class="h3 fw-bold pt-3 pb-4 text-danger text-center">Nie odnaleziono strony (Error 404)</p> 
                     </div>
                 </div>
             </div>
-        </div>
+        <div>
     </div>
 {% endblock content %}

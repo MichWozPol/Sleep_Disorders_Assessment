@@ -5,6 +5,14 @@
        O projekcie - Ocena Snu
 {% endblock title %}
 
+{% block sub_home %}
+    <a class="nav-link" href="{{ url_for('home')}}">Home</a>
+{% endblock sub_home %}
+
+{% block sub_about %}
+    <a class="nav-link active" aria-current="page" href="{{ url_for('about')}}">O projekcie</a>
+{% endblock sub_about %}          
+
 {% block content %}
   <div class="d-flex justify-content-center bg-light"
     style = "

@@ -21,7 +21,6 @@ def home():
     if request.method == "POST":
         print(request.form)
         ip_address = request.headers['X-Real-IP']
-        #ip_address = request.remote_addr
 
         if ip_address not in (item[0] for item in ip):
             date = datetime.datetime.now()
@@ -44,7 +43,7 @@ def home():
             flash('Formularz został wysłany. Dziękujemy za udział w ankiecie.', 'success')
             return redirect(url_for('home'))
         else:
-            flash('Formularz został już wypełniony', 'danger')
+            flash('Formularz został już wypełniony.', 'danger')
             return redirect(url_for('home'))
 
     return render_template("index.html", questions=questions, answers=answer)
