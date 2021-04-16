@@ -5,7 +5,6 @@ from sleep_disorders.settings.configuration import Config
 from sleep_disorders.settings import db_settings as settings
 from sleep_disorders.errors.handlers import errors
 
-
 mydatabase = mysql.connector.connect(
     host=settings.host,
     user=settings.user,
