@@ -9,46 +9,45 @@
       <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/base.css')}}">
       {% block css %} {% endblock css%}
   </head>
-  <body>
+  <body style="min-height: 100vh;">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand ml-3 mr-4" href="{{ url_for('home')}}">Ocena snu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('home')}}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('about')}}">O projekcie</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Badania
-            </a>
-            <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="https://drive.google.com/file/d/1rUaD_yHSB60lDUMQVxozsbYOWlEQMxU5/view?usp=sharing" target="_blank"><div class="nav-class-cont text-light">
-                Zaburzenia snu-studenci</div></a></li>
-                <li><a class="dropdown-item" href="https://drive.google.com/file/d/1ORDslPRXq4M1F3EHQwksoEa0fT_OoRF4/view?usp=sharing" target="_blank"><div class="nav-class-cont text-light">
-                Znaczenie jakości snu</div></a></li>
-                <li><a class="dropdown-item" href="https://drive.google.com/file/d/1eezKzgXS6GpDeXGozJChtk9vv5PC3IOc/view?usp=sharing" target="_blank">
-                <div class="nav-class-cont text-light">Nowoczesne urządzenia a sen</div></a></li>
-                <li><a class="dropdown-item" href="https://drive.google.com/file/d/1HUf_3jRBjvawI7gPa93e8FtRIP0eEKWv/view?usp=sharing" target="_blank">
-                <div class="nav-class-cont text-light">Badanie snu-aktygrafia</div></a></li>
-                <li><a class="dropdown-item" href="https://drive.google.com/file/d/18SH0ZGwJKJE_SADX1_uE2g4gS5ukj3Iv/view?usp=sharing" target="_blank">
-                <div class="nav-class-cont text-light">Chroniczna bezsenność</div></a></li>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand ml-3 mr-4" href="{{ url_for('home')}}">Ocena snu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('home')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about')}}">O projekcie</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Badania
+                </a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="https://drive.google.com/file/d/1rUaD_yHSB60lDUMQVxozsbYOWlEQMxU5/view?usp=sharing" target="_blank"><div class="nav-class-cont text-light">
+                    Zaburzenia snu-studenci</div></a></li>
+                    <li><a class="dropdown-item" href="https://drive.google.com/file/d/1ORDslPRXq4M1F3EHQwksoEa0fT_OoRF4/view?usp=sharing" target="_blank"><div class="nav-class-cont text-light">
+                    Znaczenie jakości snu</div></a></li>
+                    <li><a class="dropdown-item" href="https://drive.google.com/file/d/1eezKzgXS6GpDeXGozJChtk9vv5PC3IOc/view?usp=sharing" target="_blank">
+                    <div class="nav-class-cont text-light">Nowoczesne urządzenia a sen</div></a></li>
+                    <li><a class="dropdown-item" href="https://drive.google.com/file/d/1HUf_3jRBjvawI7gPa93e8FtRIP0eEKWv/view?usp=sharing" target="_blank">
+                    <div class="nav-class-cont text-light">Badanie snu-aktygrafia</div></a></li>
+                    <li><a class="dropdown-item" href="https://drive.google.com/file/d/18SH0ZGwJKJE_SADX1_uE2g4gS5ukj3Iv/view?usp=sharing" target="_blank">
+                    <div class="nav-class-cont text-light">Chroniczna bezsenność</div></a></li>
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
-</nav>
-    {% block content %} {% endblock content%}
+          </div>
+        </div>
+      </nav>
+    </header>
+    {% block content %} {% endblock content %}
   </body>
 </html>
