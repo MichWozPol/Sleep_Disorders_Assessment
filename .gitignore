@@ -57,6 +57,9 @@ requirements.txt
 #envs
 .sda_flask/
 
+#database_conf_file
+.sleep_disorders/settings/db_settings.py
+
 #other_project_resources
 project_resources/
 .project_resources/
