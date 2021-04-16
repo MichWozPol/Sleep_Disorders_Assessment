@@ -40,7 +40,6 @@ def home():
                 mycursor.execute(sql, val)
                 mydatabase.commit()
 
-            mydatabase.close()
             flash('Formularz został wysłany. Dziękujemy za udział w ankiecie.', 'success')
             return redirect(url_for('home'))
         else:

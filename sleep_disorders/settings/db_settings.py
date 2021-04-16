@@ -3,3 +3,4 @@ host="ocenasnu.mysql.pythonanywhere-services.com"
 user="ocenasnu"
 password="dbsoa4321"
 database="ocenasnu$survey"
+pool_recycle=280
