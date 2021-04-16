@@ -2,7 +2,7 @@
 
 
 {% block title %}
-       Ocena Snu     
+       Ocena Snu
 {% endblock title %}
 
 {% block css %}
@@ -14,10 +14,10 @@
             {% for category, message in messages %}
                 <div class="d-flex justify-content-center bg-light"
                 style = "
-                background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80'); 
+                background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80');
                 background-attachment: fixed;
-                background-position: center;"> 
-                    <div class="row w-50 pt-5 pb-1 d-inline-block"> 
+                background-position: center;">
+                    <div class="row w-50 pt-5 pb-1 d-inline-block">
                         <div class="alert alert-{{category}}">
                             <p class="fw-bold fs-5">{{message}}</p>
                         </div>
@@ -25,14 +25,14 @@
                 </div>
             {% endfor %}
         {% endif %}
-    {% endwith %} 
+    {% endwith %}
 
     <div class="d-flex justify-content-center bg-light"
     style = "
-    background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80'); 
+    background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80');
     background-attachment: fixed;
-    background-position: center;"> 
-        <div class="row w-50 pt-4 pb-4 d-inline-block">        
+    background-position: center;">
+        <div class="row w-50 pt-4 pb-4 d-inline-block">
             <form method="post" action="./" class="form group bg-light text-black rounded-lg border border-3 border-secondary">
                 {% for question in questions %}
                     <br><br><div class="question-container px-4 py-2">
@@ -41,7 +41,7 @@
                         {% if question[2] == "choose" %}
                             {% if answer[1] == question[0] %}
                                 <div class="form-check">
-                                    <input class="form" name="{{question[0]}}" value="{{ answer[0] }}" type="radio">
+                                    <input class="form" name="{{question[0]}}" value="{{ answer[0] }}" type="radio" required>
                                     <label class="form-check-label">{{ answer[2] }}</label><br><br>
                                 </div>
                             {% endif %}
