@@ -11,14 +11,15 @@
       <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet", type="text/css">
       <link href="{{url_for('static', filename='reset-min.css')}}" rel="stylesheet", type="text/css">
       <link href="{{url_for('static', filename='header-10.css')}}" rel="stylesheet", type="text/css">
+      <link rel="icon" href="data:,">
       {% block css %} {% endblock css%}
       <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
   </head>
-  <body style=" 
+  <body style="
         min-height: 100%;
         margin: 0;
         padding: 0;
-        background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80'); 
+        background-image: url('https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1875&q=80');
         background-attachment: fixed;
         background-position: center;">
     <header class="site-header">
