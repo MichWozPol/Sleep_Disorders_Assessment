@@ -2,8 +2,8 @@ import datetime
 from sleep_disorders import mydatabase
 from flask import request, flash, redirect, render_template, url_for
 from sleep_disorders import app
-from sleep_disorders import db
-from sleep_disorders.models.models import Answer
+#from sleep_disorders import db
+#from sleep_disorders.models.models import Answer
 
 
 @app.route('/', methods=["GET", "POST"])

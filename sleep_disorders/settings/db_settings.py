@@ -4,3 +4,6 @@ user = "root"
 password=""
 database="sleep_disorders"
 pool_recycle=280
+track_modifications = False
+pre_ping = True
+timeout = 20
