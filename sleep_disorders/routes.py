@@ -12,8 +12,8 @@ def home():
     user = db.session.query(User.Users).all()
 
     if request.method == "POST":
-        #ip_address = request.headers['X-Real-IP']
-        ip_address = request.remote_addr
+        ip_address = request.headers['X-Real-IP']
+        #ip_address = request.remote_addr
 
         if ip_address not in (item.ip for item in user):
             date = datetime.datetime.now()
