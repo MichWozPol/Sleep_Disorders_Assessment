@@ -66,7 +66,7 @@
             </form>
         </div>
 
-        <div class="row pt-4 pb-3 d-inline-block d-lg-none px-4">
+        <div class="row pt-4 pb-3 d-inline-block d-lg-none px-3" style="max-width: 100% !important;">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
@@ -92,7 +92,7 @@
                         {% if question[2] == "choose" %}
                             {% if answer[1] == question[0] %}
                                 <div class="form-check" style="display:flex;">
-                                    <input class="form mt-2" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio" required>
+                                    <input class="form mt-2" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio">
                                     <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer[2] }}</label>
                                 </div>
                             {% endif %}
