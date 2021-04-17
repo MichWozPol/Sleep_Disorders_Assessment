@@ -1,3 +1,5 @@
+sleep_disorders/settings/db_settings.py
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
