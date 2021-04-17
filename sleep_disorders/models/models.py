@@ -1,18 +1,14 @@
-from sleep_disorders import db
-from sqlalchemy import Table
+from sleep_disorders import Base
 
 
-class Answer(db.Model):
-    __table__ = Table('answer', db.Model.metadata, autoload=True) 
-    
+class Question:
+    Questions = Base.classes.question
 
-class Question(db.Model):
-    __table__ = Table('question', db.Model.metadata, autoload=True)
+class Answer:
+    Answers = Base.classes.answer
 
+class User:
+    Users = Base.classes.user
 
-class User(db.Model):
-    __table__ = Table('user', db.Model.metadata, autoload=True)
-
-
-class Vote(db.Model):
-    __table__ = Table('vote', db.Model.metadata, autoload=True)
+class Vote:
+    Votes = Base.classes.vote
