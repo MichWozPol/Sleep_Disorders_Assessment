@@ -1,5 +1,4 @@
 # Sleep_Disorders_Assessment
-##TODO
 
 Flask app based on the architectural MVC pattern: <br>
 <ul>
