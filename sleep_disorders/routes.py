@@ -33,8 +33,8 @@ def home():
     answer = db.session.query(Answers).all()
     user = db.session.query(User).all()
 
-    for user in user:
-        print(user.ip)
+    for u in user:
+        print(u.ip)
 
     if request.method == "POST":
         print(request.form)
