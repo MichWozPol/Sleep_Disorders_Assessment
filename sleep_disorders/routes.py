@@ -28,7 +28,7 @@ def home():
             value = (date, ip_address)
             print(f"data {date} ip: {ip_address}")
             req = "INSERT INTO user (created_at, ip) VALUES (%s, %s)"
-            mycursor.reconnect()
+            mycursor = mydatabase.cursor()
             mycursor.execute(req, value)
             mydatabase.commit()
             sql = f"SELECT id FROM user WHERE ip = '{ip_address}' "
@@ -39,7 +39,6 @@ def home():
             for key, value in request.form.items():
                 sql = "INSERT INTO vote (question_id, answer_id, user_id) VALUES (%s, %s, %s)"
                 val = (int(key), int(value), int(user_id[-1][0]))
-                mycursor.reconnect()
                 mycursor.execute(sql, val)
                 mydatabase.commit()
             
