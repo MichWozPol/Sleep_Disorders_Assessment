@@ -45,7 +45,7 @@
                         {% if question[2] == "choose" %}
                             {% if answer[1] == question[0] %}
                                 <div class="form-check">
-                                    <input class="form" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio">
+                                    <input class="form" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio" required>
                                     <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer[2] }}</label>
                                 </div>
                             {% endif %}
@@ -92,8 +92,8 @@
                         {% if question[2] == "choose" %}
                             {% if answer[1] == question[0] %}
                                 <div class="form-check" style="display:flex;">
-                                    <input class="form mt-3" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio">
-                                    <label class="form-check-label px-1 py-3" style="opacity: 1 !important;">{{ answer[2] }}</label>
+                                    <input class="form mt-2" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio" required>
+                                    <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer[2] }}</label>
                                 </div>
                             {% endif %}
                         {% endif %}
