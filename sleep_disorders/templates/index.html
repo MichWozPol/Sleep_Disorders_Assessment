@@ -92,7 +92,7 @@
                         {% if question.type == "choose" %}
                             {% if answer.question_id == question.id %}
                                 <div class="form-check" style="display:flex;">
-                                    <input class="form mt-2" style="opacity: 1 !important;" name="{{question.id}}" value="{{ answer.id }}" type="radio">
+                                    <input class="form mt-2" style="opacity: 1 !important;" name="{{question.id}}" value="{{ answer.id }}" type="radio" required>
                                     <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer.content }}</label>
                                 </div>
                             {% endif %}
