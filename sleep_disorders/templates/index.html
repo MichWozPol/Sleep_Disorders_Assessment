@@ -39,22 +39,22 @@
                 {% for question in questions %}
                     <div class="question-answer-container rounded-lg border border-3 mb-4" style="border-radius: 30px; background-color: #eee5ee; border-color:#855787 !important; opacity: 0.78; filter: brightness(120%);">
                     <div class="question-container px-4 pt-3">
-                    <p class="h5 fw-bold" style="opacity: 1 !important;">{{ loop.index }}. {{ question[1] }} </p></div>
+                    <p class="h5 fw-bold" style="opacity: 1 !important;">{{ loop.index }}. {{ question.content }} </p></div>
                     <div class="all_answer-container pb-2">
                     {% for answer in answers %}
-                        {% if question[2] == "choose" %}
-                            {% if answer[1] == question[0] %}
+                        {% if question.type == "choose" %}
+                            {% if answer.question_id == question.id %}
                                 <div class="form-check">
-                                    <input class="form" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio" required>
-                                    <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer[2] }}</label>
+                                    <input class="form" style="opacity: 1 !important;" name="{{question.id}}" value="{{ answer.id }}" type="radio" required>
+                                    <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer.content }}</label>
                                 </div>
                             {% endif %}
                         {% endif %}
-                        {% if question[2] == "check" %}
-                            {% if answer[1] == question[0] %}
+                        {% if question.type == "check" %}
+                            {% if answer.question_id == question.id %}
                                 <div class="form-check">
-                                    <input class="form" name="{{question[0]}}" value="{{ answer[0] }}" type="checkbox" >
-                                    <label class="form-check-label px-1 py-1">{{ answer[2] }}</label>
+                                    <input class="form" name="{{question.id}}" value="{{ answer.id }}" type="checkbox" >
+                                    <label class="form-check-label px-1 py-1">{{ answer.content }}</label>
                                 </div>
                             {% endif %}
                         {% endif %}
@@ -89,19 +89,19 @@
                     <p class="h5 fw-bold" style="opacity: 1 !important;">{{ loop.index }}. {{ question[1] }} </p></div>
                     <div class="all_answer-container pb-2">
                     {% for answer in answers %}
-                        {% if question[2] == "choose" %}
-                            {% if answer[1] == question[0] %}
+                        {% if question.type == "choose" %}
+                            {% if answer.question_id == question.id %}
                                 <div class="form-check" style="display:flex;">
-                                    <input class="form mt-2" style="opacity: 1 !important;" name="{{question[0]}}" value="{{ answer[0] }}" type="radio">
-                                    <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer[2] }}</label>
+                                    <input class="form mt-2" style="opacity: 1 !important;" name="{{question.id}}" value="{{ answer.id }}" type="radio">
+                                    <label class="form-check-label px-1 py-1" style="opacity: 1 !important;">{{ answer.content }}</label>
                                 </div>
                             {% endif %}
                         {% endif %}
-                        {% if question[2] == "check" %}
-                            {% if answer[1] == question[0] %}
+                        {% if question.type == "check" %}
+                            {% if answer.question_id == question.id %}
                                 <div class="form-check" style="display:flex;"> 
-                                    <input class="form mt-2" name="{{question[0]}}" value="{{ answer[0] }}" type="checkbox" >
-                                    <label class="form-check-label px-1 py-1">{{ answer[2] }}</label>
+                                    <input class="form mt-2" name="{{question.id}}" value="{{ answer.id }}" type="checkbox" >
+                                    <label class="form-check-label px-1 py-1">{{ answer.content }}</label>
                                 </div>
                             {% endif %}
                         {% endif %}
