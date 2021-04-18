@@ -22,7 +22,7 @@ def home():
             db.session.commit()
             user = db.session.query(User.Users).filter(User.Users.ip == ip_address).first()
 
-            for key, value in request.form.items():
+            for key, value in request.form.items(multi=True):
                 new_vote = Vote.Votes(question_id=int(key), answer_id=int(value), user_id=int(user.id))
                 db.session.add(new_vote)
                 db.session.commit()
