@@ -5,9 +5,9 @@ def read_csv():
     votes = []
     i = 15
     last_id = 0
-    with open('D:\\Pobrane\\answer.csv', 'r') as f:
+    with open('C:\\Users\\micha\\Downloads\\1_wd.csv', 'r') as f:
         reader = csv.reader(f)
-        for u_id, _, _ in reader:
+        for u_id, a, b in reader:
             if int(u_id) > last_id:
                 last_id = int(u_id)
         last_user_id_plus_1 = last_id + 1
@@ -21,11 +21,11 @@ def read_csv():
         dict_24 = {34: "'chrapanie'", 35: "'mĂłwienie przez sen'", 36: "'nocne kurcze miÄ™Ĺ›ni'", 37: "'lunatykowanie'",
                    38: "'nie posiadam takiej osoby'"}
 
-        with open('D:\\Pobrane\\answer.csv', 'r') as file:
+        with open('C:\\Users\\micha\\Downloads\\1_wd.csv', 'r') as file:
             reader = csv.reader(file)
             buf_list = [x]
             for user_id, question_id, answer in reader:
-                print(f'{user_id}, {question_id}, {answer}')
+                #print(f'{user_id}, {question_id}, {answer}')
                 if int(user_id) == x:
                     buf_list.append(f"'{answer}'")
         is_in_buf_lis(dict_15, buf_list)
@@ -33,7 +33,7 @@ def read_csv():
         is_in_buf_lis(dict_24, buf_list)
         votes.append(buf_list)
 
-    with open('D:\\Dokumenty\\Studia\\SEM6\\HIED\\votes_weka_q.csv', 'w', newline='') as file_out:
+    with open('C:\\Users\\micha\\Downloads\\2_wd.csv', 'w', newline='') as file_out:
         writer = csv.writer(file_out)
         writer.writerows(votes)
 
@@ -47,5 +47,3 @@ def is_in_buf_lis(dict_n, buf_list):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     read_csv()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
