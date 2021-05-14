@@ -1,5 +1,11 @@
 #3-->gender, 9-->sleep_quality
-#for this data chance is higher than 0.05 so we have to dissmiss assumption that 
+
+#https://towardsdatascience.com/determine-if-two-distributions-are-significantly-different-using-the-mann-whitney-u-test-1f79aa249ffb
+#for this data chance is higher than 0.05 so we conclude that distribution of this 2 data sets are similar
+
+#null hypothesis: distribution of two data sets are identical
+#the lover the p-value is, the stronger evidence against the null hypothesis
+#less than 0.05 means that the null hypothesis can be rejected
 
 import pandas as pd
 import numpy as np
