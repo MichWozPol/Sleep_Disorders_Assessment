@@ -9,6 +9,8 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 
 
+COLUMN_NUMBER = '3'
+
 def encode_columns(df):
     le = preprocessing.LabelEncoder()
     for column in df.columns:
@@ -18,12 +20,12 @@ def encode_columns(df):
     return df
 
 def divide_into_X_Y(df):
-    y = df['1']
-    x = df.drop(columns=['1'])
+    y = df[COLUMN_NUMBER]
+    x = df.drop(columns=[COLUMN_NUMBER])
     return x,y
 
 def train_test(x,y):
-    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=10)
+    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1110)
     return X_train, X_test, y_train, y_test
 
 def tree_classifier(X_train, X_test, y_train, y_test):
