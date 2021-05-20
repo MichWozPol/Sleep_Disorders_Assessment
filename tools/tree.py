@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import sklearn
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
@@ -19,8 +18,8 @@ def encode_columns(df):
     return df
 
 def divide_into_X_Y(df):
-    y = df['30']
-    x = df.drop(columns=['30'])
+    y = df['1']
+    x = df.drop(columns=['1'])
     return x,y
 
 def train_test(x,y):
@@ -33,7 +32,7 @@ def tree_classifier(X_train, X_test, y_train, y_test):
     score = clf.score(X_test, y_test)
     print(f'Confusion Matrix Tree: \n {metrics.confusion_matrix(y_test, clf.predict(X_test))}')
     plt.figure(figsize=(30, 30))
-    plot_tree(clf)
+    plot_tree(clf, feature_names=df.columns, filled=True)
     plt.show()
     return score
 
@@ -41,12 +40,14 @@ def naive_Bayes(X_train, X_test, y_train, y_test):
     gnb = GaussianNB()
     gnb.fit(X_train, y_train)
     scoreNB = gnb.score(X_test, y_test)
+    print(f'Confusion Matrix Gaussian Naive Bayes: \n {metrics.confusion_matrix(y_test, gnb.predict(X_test))}')
     return scoreNB
 
 def KNN_Neighbours(X_train, X_test, y_train, y_test):
     knn = KNeighborsClassifier(n_neighbors=3)
     knn.fit(X_train, y_train)
     score_knn = knn.score(X_test, y_test)
+    print(f'Confusion Matrix KNN Neighbours: \n {metrics.confusion_matrix(y_test, knn.predict(X_test))}')
     return score_knn
 
 
