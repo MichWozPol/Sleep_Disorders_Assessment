@@ -31,12 +31,12 @@ def train_test(x,y):
 def tree_classifier(X_train, X_test, y_train, y_test):
     clf = DecisionTreeClassifier(random_state=0)
     clf.fit(X_train, y_train)
-    score = clf.score(X_test, y_test)
+    score_tree = clf.score(X_test, y_test)
     print(f'Confusion Matrix Tree: \n {metrics.confusion_matrix(y_test, clf.predict(X_test))}')
     plt.figure(figsize=(30, 30))
     plot_tree(clf, feature_names=df.columns, filled=True)
     plt.show()
-    return score
+    return score_tree
 
 def naive_Bayes(X_train, X_test, y_train, y_test):
     gnb = GaussianNB()
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     df = pd.read_csv(path, error_bad_lines=False)
     df = encode_columns(df)
     x,y = divide_into_X_Y(df)
-    X_train, X_test, y_train, y_test = train_test_split(x,y)
+    X_train, X_test, y_train, y_test = train_test(x,y)
 
     score_tree = tree_classifier(X_train, X_test, y_train, y_test)
     score_nb = naive_Bayes(X_train, X_test, y_train, y_test)
