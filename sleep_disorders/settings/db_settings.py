@@ -5,6 +5,7 @@ host = config("host")
 user = config("user")
 password = config("password")
 database = config("database")
+port = config("port")
 pool_recycle=280
 track_modifications = False
 pre_ping = True

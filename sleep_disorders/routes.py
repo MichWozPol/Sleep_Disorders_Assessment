@@ -39,3 +39,7 @@ def home():
 @app.route('/o-projekcie', methods=["GET"])
 def about():
     return render_template("about.html")
+
+@app.route('/wyniki', methods=["GET"])
+def results():
+    return render_template("results.html")
