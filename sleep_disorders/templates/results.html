@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+       Wyniki - Ocena Snu
+{% endblock title %}
+
+{% block sub_home %}
+    <a class="nav-link" href="{{ url_for('home')}}">Home</a>
+{% endblock sub_home %}
+
+{% block sub_about %}
+    <a class="nav-link" href="{{ url_for('about')}}">O projekcie</a>
+{% endblock sub_about %}       
+
+{% block sub_results %}
+    <a class="nav-link active" aria-current="page" href="{{ url_for('results')}}">Wyniki</a>
+{% endblock sub_results %}   
+
+{% block content %}
+  <div class="d-flex justify-content-center bg-light"
+    style = "
+    background-image: url('static/images/background_night.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;">
+        <div class="row w-50 pt-4 pb-3 mt-5 d-inline-block d-none d-lg-block">
+            <div class = "row w-95 mx-auto">
+                <div class="question-answer-container rounded-lg border border-3 mb-4 px-4" style="border-radius: 30px; background-color: #eee5ee; border-color:#855787 !important; opacity: 0.88; filter: brightness(100%);">
+                    <div class="question-container pt-3 px-2">
+                        <article>                    
+                             <p class="h3 fw-bold pt-2 pb-2"> Ankieta </p> 
+                             <p class="fs-5 pb-5">
+                                Ankieta składa się z 23 pytań z czego 20 z nich jest pytaniami niezbędnymi do wypełnienia przez internautę.
+                                Sam kwersionariusz jest w pełni anonimowy, a przewidywany czas jego wypełniania wynosi 5 minut. <br>
+                            </p>
+                            <p class="h3 fw-bold pt-0 pb-2"> Projekt </p> 
+                             <p class="fs-5 pb-5">
+                                Projekt został przygotowany celem gromadzenia danych, które wypełniane są przez użytkowników odwiedzających zaprezentowaną stronę. </br>
+                                Następnie zgromadzone dane zostały przetworzone za pomocą pythonowskiej biblioteki sklearn (CART, KNN, naiwny klasyfikator Bayesa) oraz scipy (test U Manna Whitneya), a także
+                                nowozelandzkiego oprogramowania WEKA (algorytm Apriori) i umieszczone na podstronie 'wyniki'.
+                            </p>
+                            <p class="h3 fw-bold pb-2">Technologie oraz programy wykorzystane do pracy przy projekcie </p>
+                            <div class="row pb-5">
+                                <div class="col-4 px-2">
+                                    <div class="list-group">   
+                                        <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary"><p class="text-center py-2 my-0">Flask</p></a>
+                                        <a href="https://www.python.org" target="_blank" class="list-group-item list-group-item-action list-group-item-success"><p class="text-center py-2 my-0">Python (sklearn)</p></a>
+                                        <a href="https://www.pythonanywhere.com" target="_blank" class="list-group-item list-group-item-action list-group-item-warning"><p class="text-center py-2 my-0">pythonanywhere</p></a>
+                                    </div>
+                                </div>
+                                <div class="col-4 px-0">
+                                    <div class="list-group"> 
+                                        <a href="https://html.spec.whatwg.org/multipage/" target="_blank" class="list-group-item list-group-item-action list-group-item-danger"><p class="text-center py-2 my-0">HTML</p></a>
+                                        <a href="https://www.w3.org/TR/css/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary"><p class="text-center py-2 my-0">CSS</p></a>
+                                        <a href="https://getbootstrap.com" target="_blank" class="list-group-item list-group-item-action list-group-item-info"><p class="text-center py-2 my-0">Bootstrap</p></a>
+                                    </div>
+                                </div>
+                                <div class="col-4 px-2">
+                                    <div class="list-group"> 
+                                        <a href="https://www.mysql.com" target="_blank" class="list-group-item list-group-item-action list-group-item-success"><p class="text-center py-2 my-0">MySQL</p></a>
+                                        <a href="https://www.javascript.com" target="_blank" class="list-group-item list-group-item-action list-group-item-warning"><p class="text-center py-2 my-0">JS</p></a>
+                                        <a href="https://www.cs.waikato.ac.nz/~ml/weka/" target="_blank" class="list-group-item list-group-item-action list-group-item-danger"><p class="text-center py-2 my-0">WEKA</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>                  
+        </div>
+
+        <div class="row w pt-4 pb-3 mt-5 d-inline-block d-lg-none px-3" style="max-width: 100% !important;">
+            <div class = "row w-95 mx-auto">
+                <div class="question-answer-container rounded-lg border border-3 mb-4 px-4" style="border-radius: 30px; background-color: #eee5ee; border-color:#855787 !important; opacity: 0.88; filter: brightness(100%);">
+                    <div class="question-container pt-3 px-2">
+                        <article>
+                             <p class="h3 fw-bold pt-2 pb-2"> Ankieta </p> 
+                             <p class="fs-5 pb-4">
+                                Ankieta składa się z 23 pytań z czego 20 z nich jest pytaniami niezbędnymi do wypełnienia przez internautę.
+                                Sam kwersionariusz jest w pełni anonimowy, a przewidywany czas jego wypełniania wynosi 5 minut. <br>
+                            </p>
+                            <p class="h3 fw-bold pt-0 pb-2"> Projekt </p> 
+                             <p class="fs-5 pb-4">
+                                Projekt został przygotowany celem gromadzenia danych, które wypełniane są przez użytkowników odwiedzających zaprezentowaną stronę. </br>
+                                Następnie zgromadzone dane zostały przetworzone za pomocą pythonowskiej biblioteki sklearn (CART, KNN, naiwny klasyfikator Bayesa) oraz scipy (test U Manna Whitneya), a także
+                                nowozelandzkiego oprogramowania WEKA (algorytm Apriori) i umieszczone na podstronie 'wyniki'.
+                            </p>
+                            <p class="h3 fw-bold pb-2">Technologie oraz programy wykorzystane do pracy przy projekcie </p>     
+                            <div class="list-group py-2">           
+                                <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary"><p class="text-center py-2 my-0">Flask</p></a>
+                                <a href="https://www.python.org" target="_blank" class="list-group-item list-group-item-action list-group-item-success"><p class="text-center py-2 my-0">Python (sklearn)</p></a>
+                                <a href="https://www.pythonanywhere.com" target="_blank" class="list-group-item list-group-item-action list-group-item-warning"><p class="text-center py-2 my-0">pythonanywhere</p></a>
+                                <a href="https://html.spec.whatwg.org/multipage/" target="_blank" class="list-group-item list-group-item-action list-group-item-danger"><p class="text-center py-2 my-0">HTML</p></a>
+                                <a href="https://www.w3.org/TR/css/" target="_blank" class="list-group-item list-group-item-action list-group-item-primary"><p class="text-center py-2 my-0">CSS</p></a>
+                                <a href="https://getbootstrap.com" target="_blank" class="list-group-item list-group-item-action list-group-item-info"><p class="text-center py-2 my-0">Bootstrap</p></a> 
+                                <a href="https://www.mysql.com" target="_blank" class="list-group-item list-group-item-action list-group-item-success"><p class="text-center py-2 my-0">MySQL</p></a>
+                                <a href="https://www.javascript.com" target="_blank" class="list-group-item list-group-item-action list-group-item-warning"><p class="text-center py-2 my-0">JS</p></a>
+                                <a href="https://www.cs.waikato.ac.nz/~ml/weka/" target="_blank" class="list-group-item list-group-item-action list-group-item-danger"><p class="text-center py-2 my-0">WEKA</p></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>                  
+        </div>
+    </div>
+{% endblock content %}
+
