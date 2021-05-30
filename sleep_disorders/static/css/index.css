@@ -1,0 +1,45 @@
+.background-container
+{
+    background-image: url('/static/images/background_night.jpg');
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.question-answer-container
+{
+    border-radius: 30px; 
+    background-color: #eee5ee; 
+    border-color:#855787 !important; 
+    opacity: 0.78; 
+    filter: brightness(120%);
+}
+
+.form-normal-container
+{
+    opacity: 1 !important;
+}
+
+.form-check-container
+{
+    display:flex;
+}
+
+.send-button
+{
+    border-radius: 8px; 
+    margin-top:-8px;
+}
+
+.lg-none-full-width-container
+{
+    max-width: 100% !important;
+}
+
+.lg-none-question-answer-container
+{
+    border-radius: 30px; 
+    background-color: #eee5ee; 
+    border-color:#855787 !important; 
+    opacity: 0.78; 
+    filter: brightness(120%);
+}
