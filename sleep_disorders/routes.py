@@ -13,7 +13,7 @@ def home():
 
     if request.method == "POST":
         ip_address = request.headers['X-Real-IP']
-        #ip_address = request.remote_addr
+        #ip_address = request.remote_addr  #one should uncomment that line on the local host
 
         if ip_address not in (item.ip for item in user):
             date = datetime.datetime.now()
@@ -34,7 +34,6 @@ def home():
             return redirect(url_for('home'))
 
     return render_template("index.html", questions=questions, answers=answer)
-
 
 @app.route('/o-projekcie', methods=["GET"])
 def about():
