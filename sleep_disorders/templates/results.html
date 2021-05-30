@@ -4,6 +4,10 @@
        Wyniki - Ocena Snu
 {% endblock title %}
 
+{% block css %}
+    <link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='css/results.css')}}">
+{% endblock css %}
+
 {% block sub_home %}
     <a class="nav-link" href="{{ url_for('home')}}">Home</a>
 {% endblock sub_home %}
@@ -17,15 +21,10 @@
 {% endblock sub_results %}   
 
 {% block content %}
-  <div class="d-flex justify-content-center bg-light"
-    style = "
-    background-image: url('static/images/background_night.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    min-height: 100vh;">
+  <div class="d-flex justify-content-center bg-light whole-flex-container">
         <div class="row w-50 pt-4 pb-3 mt-5 d-inline-block d-none d-lg-block">
             <div class = "row w-95 mx-auto">
-                <div class="question-answer-container rounded-lg border border-3 mb-4 px-4" style="border-radius: 30px; background-color: #eee5ee; border-color:#855787 !important; opacity: 0.88; filter: brightness(100%);">
+                <div class="question-answer-container rounded-lg border border-3 mb-4 px-4">
                     <div class="question-container pt-3 px-2">
                         <article>                    
                              <p class="h3 fw-bold pt-2 pb-2"> Algorytm A-priori </p> 
@@ -94,9 +93,9 @@
             </div>                  
         </div>
 
-        <div class="row w pt-4 pb-3 mt-5 d-inline-block d-lg-none px-3" style="max-width: 100% !important;">
+        <div class="row w pt-4 pb-3 mt-5 d-inline-block d-lg-none px-3 lg-none-full-width-container">
             <div class = "row w-95 mx-auto">
-                <div class="question-answer-container rounded-lg border border-3 mb-4 px-4" style="border-radius: 30px; background-color: #eee5ee; border-color:#855787 !important; opacity: 0.88; filter: brightness(100%);">
+                <div class="question-answer-container rounded-lg border border-3 mb-4 px-4">
                     <div class="question-container pt-3 px-2">
                          <article>                    
                              <p class="h3 fw-bold pt-2 pb-2"> Algorytm A-priori </p> 
@@ -166,4 +165,3 @@
         </div>
     </div>
 {% endblock content %}
-

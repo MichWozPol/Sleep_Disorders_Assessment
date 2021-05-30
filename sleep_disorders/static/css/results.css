@@ -1,0 +1,21 @@
+.question-answer-container
+{
+    border-radius: 30px; 
+    background-color: #eee5ee; 
+    border-color:#855787 !important; 
+    opacity: 0.88; 
+    filter: brightness(100%);
+}
+
+.lg-none-full-width-container
+{
+    max-width: 100% !important;
+}
+
+.whole-flex-container
+{
+    background-image: url('/static/images/background_night.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
