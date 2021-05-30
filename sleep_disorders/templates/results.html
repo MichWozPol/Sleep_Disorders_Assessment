@@ -29,7 +29,7 @@
                     <div class="question-container pt-3 px-2">
                         <article>                    
                              <p class="h3 fw-bold pt-2 pb-2"> Algorytm A-priori </p> 
-                             <p class="fs-5 pb-2">
+                             <p class="fs-5 pb-1">
                                 Pierwszym algorytmem zastosowanym do data-mining-u był algorytm a-priori. Jego użycie miało na celu wyznaczenie zbiorów częstych oraz reguł asocjacyjnych.
                                 Finalnym krokiem miało być natomiast powiązanie aktywnosci fizycznej z jakością snu. Poniżej został przedstawiony sposób znajdowania reguł asocjacyjnych w programie
                                 WEKA:
@@ -46,7 +46,7 @@
                                 <li> 2 pięcioelementowe zbiory częste </li>
                             </ul>
                             <p class="fs-5 pb-2 pt-0">
-                                Przy zalożeniu, iż wartość progowa wspracia wyznaczania zbiorów częstych wynosiła 0,6.
+                                Przy założeniu, iż wartość progowa wspracia wyznaczania zbiorów częstych wynosiła 0,6.
                             </p>
                             <p class="fs-5 pb-2 pt-0">
                                 Ostatecznie zostały potwierdzone szeroko znane fakty, takie jak powiązanie nieprzyjmowanie środków nasennych z brakiem choroby wyznaczone przy pewności równej 1,
@@ -56,13 +56,38 @@
                                 Co ciekawe zostały także powiązane objawy u partnera (a dokładniej ich brak) z brakiem choroby. Wynika to jednak z faktu mało zróżnicowanej grupy badanej, a także
                                 znikomej liczby osób, które posiadały stwierdzoną chorobę snu.
                             </p>
-                            <p class="h3 fw-bold pt-0 pb-2"> Projekt </p> 
-                             <p class="fs-5 pb-5">
-                                Projekt został przygotowany celem gromadzenia danych, które wypełniane są przez użytkowników odwiedzających zaprezentowaną stronę. </br>
-                                Następnie zgromadzone dane zostały przetworzone za pomocą pythonowskiej biblioteki sklearn (CART, KNN, naiwny klasyfikator Bayesa) oraz scipy (test U Manna Whitneya), a także
-                                nowozelandzkiego oprogramowania WEKA (algorytm Apriori) i umieszczone na podstronie 'wyniki'.
+
+                            <p class="h3 fw-bold pb-2">Nieparametryczny test U Manna-Whitney'a </p>
+                            <p class="fs-5 pb-2">
+                                Kolejną metodą eksploracji danych było zastosowanie testu U Manna Whitney'a, który miał na celu porównanie zaburzeń w zależności od płci. 
                             </p>
-                            <p class="h3 fw-bold pb-2">Technologie oraz programy wykorzystane do pracy przy projekcie </p>
+                            <p class="fs-5 pb-2">                                
+                                Pierwszą przyjętą przez nas
+                                hipotezą zerową było stwierdzenie, i jakość snu jest zbliżona w zależności od płci - różnice są nieznaczne statystycznie. Dla tego przypadku hipotezą alternatywną było
+                                sformułowanie, iż jakość snu jest różna w zleżności od płci. Za α została przyjęta wartośc 0.05, a sam wynik testu wyniósł 0.89, co spowodowało przyjęcie hipotezy zerowej.
+                            </p>
+                            <p class="fs-5 pb-2"> 
+                                Drugą przyjętą przez nas
+                                hipotezą zerową było stwierdzenie, i czas zasypiania jest zbliżony w zależności od płci. W tym wypadku hipotezą alternatywną było
+                                stwierdzenie, mówiące o tym, że czas zasypiania jest różny w zleżności od płci. Za α została przyjęta wartośc 0.05, a sam wynik testu wyniósł 0.73, co podobnie jak w poprzedniej próbie
+                                spowodowało przyjęcie hipotezy zerowej.
+                            </p>
+
+                            <p class="h3 fw-bold pb-2">CART, KNN, naiwny klasyfikator Bayesa</p>
+                            <p class="fs-5 pb-1">                                
+                                Ostatnimi metodami eksploracji danych był algorytm drzewa decyzyjnego, K-najbliższych sąsiadów oraz naiwny klasyfikator Bayesa.
+                                Za pomocą tych algorytmów próbowaliśmy przewidzieć w jakim stopniu sen oraz inne parametry zawarte w ankiecie są powiązane z płcią, a także porównać
+                                wyniki otrzymane dzięki tym klasyfiktatorom między sobą w celu ustalenia który klasyfikator w tym wypadku najlepiej się sprawdzi. </br> </br>
+                                Drzewo decyzyjne dla 72% danych testowych poprawnie przewidziało wyniki. Stosunkowo niski był także błąd resubstytucji (0.2778), natomiast precyzja sięgała 90%. 
+                                Poniżej przedstawiona została wizualizacja drzewa decyzyjnego dla omawianego przypadku:
+                            </p>
+                            <img src="{{url_for('static',filename='images/tree.png')}}" width="70%" class="rounded mx-auto d-block">
+                            <p class="fs-5 pb-3 pt-3">
+                                Algorytm KNN także dla 72% danych testowych poprawnie przewidział wyniki, jednakże precyzja oraz swoistość tej metody była niższa o kilka punktów procentowych dla każdej z wymienionych miar. </br>
+                                Najgorze wyniki zostały otrzymane stosując naiwny klasyfikator Bayesa, gdzie dokładność była niewiele wyższa od "rzutu monetą" (50%), a precyzja sięgała zaledwie 30%. </br></br>
+                                Podsumowując - wyniki osiągane za pomocą danych klasyfikatorów byłyby znaczenie lepsze przy większej liczbie rekordów niż 100 - grupa była stosunkowo mało reprezentatywna, a liczba rekordów
+                                stosunkowo mała.
+                            </p>
                         </article>
                     </div>
                 </div>
@@ -92,7 +117,7 @@
                                 <li> 2 pięcioelementowe zbiory częste </li>
                             </ul>
                             <p class="fs-5 pb-2 pt-0">
-                                Przy zalożeniu, iż wartość progowa wspracia wyznaczania zbiorów częstych wynosiła 0,6.
+                                Przy założeniu, iż wartość progowa wspracia wyznaczania zbiorów częstych wynosiła 0,6.
                             </p>
                             <p class="fs-5 pb-2 pt-0">
                                 Ostatecznie zostały potwierdzone szeroko znane fakty, takie jak powiązanie nieprzyjmowanie środków nasennych z brakiem choroby wyznaczone przy pewności równej 1,
@@ -102,13 +127,38 @@
                                 Co ciekawe zostały także powiązane objawy u partnera (a dokładniej ich brak) z brakiem choroby. Wynika to jednak z faktu mało zróżnicowanej grupy badanej, a także
                                 znikomej liczby osób, które posiadały stwierdzoną chorobę snu.
                             </p>
-                            <p class="h3 fw-bold pt-0 pb-2"> Projekt </p> 
-                             <p class="fs-5 pb-5">
-                                Projekt został przygotowany celem gromadzenia danych, które wypełniane są przez użytkowników odwiedzających zaprezentowaną stronę. </br>
-                                Następnie zgromadzone dane zostały przetworzone za pomocą pythonowskiej biblioteki sklearn (CART, KNN, naiwny klasyfikator Bayesa) oraz scipy (test U Manna Whitneya), a także
-                                nowozelandzkiego oprogramowania WEKA (algorytm Apriori) i umieszczone na podstronie 'wyniki'.
+
+                            <p class="h3 fw-bold pb-2">Nieparametryczny test U Manna-Whitney'a </p>
+                            <p class="fs-5 pb-2">
+                                Kolejną metodą eksploracji danych było zastosowanie testu U Manna Whitney'a, który miał na celu porównanie zaburzeń w zależności od płci. 
                             </p>
-                            <p class="h3 fw-bold pb-2">Technologie oraz programy wykorzystane do pracy przy projekcie </p>
+                            <p class="fs-5 pb-2">                                
+                                Pierwszą przyjętą przez nas
+                                hipotezą zerową było stwierdzenie, i jakość snu jest zbliżona w zależności od płci - różnice są nieznaczne statystycznie. Dla tego przypadku hipotezą alternatywną było
+                                sformułowanie, iż jakość snu jest różna w zleżności od płci. Za α została przyjęta wartośc 0.05, a sam wynik testu wyniósł 0.89, co spowodowało przyjęcie hipotezy zerowej.
+                            </p>
+                            <p class="fs-5 pb-2"> 
+                                Drugą przyjętą przez nas
+                                hipotezą zerową było stwierdzenie, i czas zasypiania jest zbliżony w zależności od płci. W tym wypadku hipotezą alternatywną było
+                                stwierdzenie, mówiące o tym, że czas zasypiania jest różny w zleżności od płci. Za α została przyjęta wartośc 0.05, a sam wynik testu wyniósł 0.73, co podobnie jak w poprzedniej próbie
+                                spowodowało przyjęcie hipotezy zerowej.
+                            </p>
+
+                                <p class="h3 fw-bold pb-2">CART, KNN, naiwny klasyfikator Bayesa</p>
+                            <p class="fs-5 pb-2">                                
+                                Ostatnimi metodami eksploracji danych był algorytm drzewa decyzyjnego, K-najbliższych sąsiadów oraz naiwny klasyfikator Bayesa.
+                                Za pomocą tych algorytmów próbowaliśmy przewidzieć w jakim stopniu sen oraz inne parametry zawarte w ankiecie są powiązane z płcią, a także porównać
+                                wyniki otrzymane dzięki tym klasyfiktatorom między sobą w celu ustalenia który klasyfikator w tym wypadku najlepiej się sprawdzi. </br> </br>
+                                Drzewo decyzyjne dla 72% danych testowych poprawnie przewidziało wyniki. Stosunkowo niski był także błąd resubstytucji (0.2778), natomiast precyzja sięgała 90%. 
+                                Poniżej przedstawiona została wizualizacja drzewa decyzyjnego dla omawianego przypadku:
+                            </p>
+                            <img src="{{url_for('static',filename='images/tree.png')}}" width="90%" class="rounded mx-auto d-block">
+                            <p class="fs-5 pb-3 pt-3">
+                                Algorytm KNN także dla 72% danych testowych poprawnie przewidział wyniki, jednakże precyzja oraz swoistość tej metody była niższa o kilka punktów procentowych dla każdej z wymienionych miar. </br>
+                                Najgorze wyniki zostały otrzymane stosując naiwny klasyfikator Bayesa, gdzie dokładność była niewiele wyższa od "rzutu monetą" (50%), a precyzja sięgała zaledwie 30%. </br></br>
+                                Podsumowując - wyniki osiągane za pomocą danych klasyfikatorów byłyby znaczenie lepsze przy większej liczbie rekordów niż 100 - grupa była stosunkowo mało reprezentatywna, a liczba rekordów
+                                stosunkowo mała.
+                            </p>
                         </article>
                     </div>
                 </div>

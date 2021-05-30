@@ -47,4 +47,4 @@ if __name__ == "__main__":
 
     print(mannwhitneyu(male_list, female_list, use_continuity=False, alternative = 'two-sided'))
     U, pval = mannwhitneyu(male_list, female_list, use_continuity=False, alternative = 'two-sided')
-    print("Z value: " + norm.ppf(pval/2))
+    print("Z value: " + str(norm.ppf(pval/2)))

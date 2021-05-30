@@ -14,7 +14,6 @@ COLUMN_NUMBER = '3'
 def encode_columns(df):
     le = preprocessing.LabelEncoder()
     for column in df.columns:
-        # print(df[column])
         le.fit(df[column])
         df[column] = le.transform(df[column])
     return df
@@ -41,9 +40,9 @@ def tree_classifier(X_train, X_test, y_train, y_test):
 def naive_Bayes(X_train, X_test, y_train, y_test):
     gnb = GaussianNB()
     gnb.fit(X_train, y_train)
-    scoreNB = gnb.score(X_test, y_test)
+    score_NB = gnb.score(X_test, y_test)
     print(f'Confusion Matrix Gaussian Naive Bayes: \n {metrics.confusion_matrix(y_test, gnb.predict(X_test))}')
-    return scoreNB
+    return score_NB
 
 def KNN_Neighbours(X_train, X_test, y_train, y_test):
     knn = KNeighborsClassifier(n_neighbors=3)
